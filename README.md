@@ -1,5 +1,3 @@
-# README.md
-
 # Parallel Matrix Multiplication Project
 
 **Author:** Fares Hazem
