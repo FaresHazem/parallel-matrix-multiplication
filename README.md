@@ -1,103 +1,80 @@
-# Parallel Matrix Multiplication Project
+# Parallel Matrix Multiplication (OpenMP)
 
-**Author:** Fares Hazem
-**Program:** Master's Student, Faculty of Science, Alexandria University
-**Course:** High Performance Computing (HPC)
+**Author:** Fares Hazem  
+**Program:** Master’s Student, Faculty of Science, Alexandria University  
+**Course:** High Performance Computing (HPC)  
 **Date:** December 2025
 
 ---
 
-## Project Description
+## 📝 Overview
+This project explores **parallel computing** using OpenMP in C++. It implements matrix multiplication in both sequential and parallel versions to analyze performance gains on multi-core processors.
 
-This project demonstrates **parallel computing** using OpenMP in C++.
-The main goal is to implement **matrix multiplication** in both sequential and parallel versions and to compare their performance.
+The project calculates key HPC metrics, including **Speedup**, **Efficiency**, and **Cost**, while ensuring the accuracy of the parallel computation through a verification step.
 
-Key features of this project:
-
-* Sequential matrix multiplication
-* Parallel (PRAM-style) matrix multiplication using OpenMP threads
-* Timing measurement for sequential and parallel execution
-* Calculation of **speedup**, **efficiency**, and **cost**
-* Verification that parallel results match the sequential results
-
-This project is designed as a simple experiment to illustrate **parallel programming concepts** and the benefits of using multiple threads for computation.
+## 🚀 Key Features
+*   **Sequential Implementation:** Baseline single-threaded multiplication.
+*   **Parallel Implementation:** Multi-threaded execution using OpenMP (PRAM-style).
+*   **Performance Analytics:** Automated calculation of Speedup and Efficiency.
+*   **Verification:** Cross-checks the parallel result against the sequential result for accuracy.
 
 ---
 
-## Project Structure
-
-```
-Project Folder/
+## 📂 Project Structure
+```text
+Matrix-Multiplication/
 │
-├── matrix_pram.cpp    # C++ source code containing sequential and parallel matrix multiplication
-└── README.md          # This file, containing project description and instructions
-```
-
-* **matrix_pram.cpp**: Contains the full implementation with timing, speedup, efficiency, and cost calculation.
-* **README.md**: Instructions on running the project and project details.
-
----
-
-## Requirements
-
-* C++ compiler with OpenMP support (GCC recommended)
-* Basic terminal/command prompt access
-
----
-
-## How to Compile and Run
-
-1. Open a terminal (Linux/macOS) or PowerShell/Command Prompt (Windows).
-2. Navigate to the project folder where `matrix_pram.cpp` is located.
-3. Compile the program with OpenMP support:
-
-### Linux / macOS / Windows (MinGW):
-
-```powershell
-search first for: MSYS2 MINGW64
-cd "/c/Users/Fares Hazem/Desktop/Matrix Multiplication"
-g++ -O2 -fopenmp matrix_pram.cpp -o matrix_pram
-./matrix_pram
+├── matrix_pram.cpp    # C++ source code (Sequential & Parallel logic)
+└── README.md          # Project documentation
 ```
 
 ---
 
-## Output
-
-When you run the program, you will see:
-
-* Number of threads used
-* Sequential execution time
-* Parallel execution time
-* Speedup achieved
-* Efficiency of parallel execution
-* Cost of parallel computation
-* Verification if the parallel result matches the sequential result
-
-Example output:
-
-```
-Number of threads/processors: 4
-
-Sequential Time: 0.374523 seconds
-Parallel Time  : 0.078231 seconds
-Speedup        : 4.785x
-Efficiency     : 1.196
-Cost           : 0.312924 seconds
-Verification   : PASS
-```
+## 🛠 Prerequisites
+To run this project, you need:
+*   A C++ compiler (GCC/MinGW recommended).
+*   OpenMP libraries (included with most modern GCC distributions).
 
 ---
 
-## Notes
+## 💻 How to Compile and Run
 
-* You can change the number of threads by modifying the `P` variable in `matrix_pram.cpp` or by setting the environment variable `OMP_NUM_THREADS`.
-* Make sure to compile with the `-fopenmp` flag to enable parallel execution.
-* This project contains only **matrix_pram.cpp** and **README.md** for simplicity and clarity.
+### Windows (using MSYS2/MinGW) or Linux
+1. Open your terminal or PowerShell.
+2. Navigate to the project directory:
+   ```bash
+   cd "/c/Users/Fares Hazem/Desktop/Matrix Multiplication"
+   ```
+3. Compile the code with the `-fopenmp` flag:
+   ```bash
+   g++ -O2 -fopenmp matrix_pram.cpp -o matrix_pram
+   ```
+4. Run the executable:
+   ```bash
+   ./matrix_pram
+   ```
 
 ---
 
-## Author Statement
+## 📊 Understanding the Output
+The program will display the following metrics:
 
-This project was implemented as part of the **High Performance Computing course** for my Master's program.
-It is intended for educational purposes to demonstrate **parallel computing concepts using OpenMP**.
+| Metric | Description |
+| :--- | :--- |
+| **Sequential Time** | Time taken using a single thread (seconds). |
+| **Parallel Time** | Time taken using multiple threads (seconds). |
+| **Speedup** | Ratio of Sequential Time to Parallel Time ($T_s / T_p$). |
+| **Efficiency** | How well the processors are utilized ($Speedup / Threads$). |
+| **Cost** | Total processor time spent ($Parallel Time \times Threads$). |
+| **Verification** | Displays `PASS` if the parallel result is 100% correct. |
+
+---
+
+## ⚙️ Configuration
+You can adjust the number of threads and matrix size directly within the `matrix_pram.cpp` file:
+*   **Modify `P`**: Change the number of threads.
+*   **Modify Matrix Dimensions**: Adjust the row/column constants for larger scale testing.
+
+---
+
+**Note:** Ensure your hardware supports the number of threads defined in the code to see optimal efficiency.
