@@ -3,7 +3,6 @@
 **Author:** Fares Hazem  
 **Program:** Master’s Student, Faculty of Science, Alexandria University  
 **Course:** High Performance Computing (HPC)  
-**Date:** December 2025
 
 ---
 
