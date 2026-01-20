@@ -1,4 +1,4 @@
-# Parallel Matrix Multiplication (OpenMP)
+# Parallel Matrix Multiplication
 
 **Author:** Fares Hazem  
 **Program:** Master’s Student, Faculty of Science, Alexandria University  
